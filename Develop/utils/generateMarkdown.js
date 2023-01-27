@@ -1,12 +1,26 @@
 // Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(lic) {
-  
   if (lic.license == 'MIT'){
     console.log('MIT Chosen')
     return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
   } 
-
+  if (lic.license == 'Apache 2.0'){
+    console.log('Apache Chosen')
+    return '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+  } 
+  if (lic.license == 'Mozilla Public 2.0'){
+    console.log('Mozilla Chosen')
+    return '[![License: MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green)](https://opensource.org/licenses/MPL-2.0)'
+  } 
+  if (lic.license == 'GNU GPLv3'){
+    console.log('GNU Chosen')
+    return '[![License: GPL v3](https://img.shields.io/badge/license-GNU_GPLv3-green/)](https://opensource.org/licenses/gpl-3.0)'
+  } 
+  if (lic.license == 'GNU Lesser General Public License'){
+    console.log('GNU Lesser Chosen')
+    return '[![License: GNU Lesser General Public License](https://img.shields.io/badge/license-LGPL--3.0-orange)](https://opensource.org/licenses/LGPL-3.0)'
+  } 
   if(!lic.license){
     return ''
   }

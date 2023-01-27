@@ -8,7 +8,9 @@ const generateMarkdown = require('./utils/generateMarkdown')
 const questions = [];
 
 // Function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+}
 
 // Function to initialize app
 function init() {}
