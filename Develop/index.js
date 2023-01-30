@@ -99,11 +99,16 @@ function writeToFile(fileName, data) {
         if (err)
         return console.log(err)
     })
-    console.log('Your README has been generated');
+    console.log('Your README has finished generating.');
 }
 
 // Function to initialize app
-function init() {}
+function init() {
+    promptUser()
+        .then((answers) => writeToFile('README.md', answers))
+        .then(() => console.log('successfully completed the README.md'))
+        .catch((err) => console.log(err));
+}
 
 // Function call to initialize app
 init();
