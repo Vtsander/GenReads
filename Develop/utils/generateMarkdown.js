@@ -36,6 +36,42 @@ function renderLicenseInfo(lic) {
   }
 }
 
+// Function to add description
+function renderDescription(lic){
+  console.log('description included')
+  if (lic.helper){
+    console.log('use helper chosen')
+    const desList = lic.tech
+    const desArray = desList.map((item, i) => `${i+1}. ${item}\n`).join('')
+    return `Technology used
+${desArray}
+## Purpose
+${lic.function}
+## Challenges 
+${lic.challenges}`
+  } else{
+    console.log('custom description chosen')
+    return `${lic.custom}`
+  }
+}
+
+// Function to add table of contents
+// If no table of contents selected return an empty string
+function renderTableOfContents(res){
+
+  if(lic.table){
+    console.log('table of contents included')
+    const tableSections = lic.sections
+    const tableArray = tableSections.map((item, i) => `${i+1}. [${item}](#${item})\n`).join('')
+
+    return `## Table of contents
+${tableArray}`
+  } else {
+    console.log('no table of contents included')
+    return ''
+  }
+}
+
 // Function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
