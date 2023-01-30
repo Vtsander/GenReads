@@ -92,6 +92,11 @@ const questions = [
     }
 ];
 
+//prompt user function
+const promptUser = function(){
+    return iq.prompt(questions)
+} 
+
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile("${fileName}", generateMarkdown(data),

@@ -57,7 +57,7 @@ ${lic.challenges}`
 
 // Function to add table of contents
 // If no table of contents selected return an empty string
-function renderTableOfContents(res){
+function renderTableOfContents(lic){
 
   if(lic.table){
     console.log('table of contents included')
@@ -72,14 +72,61 @@ ${tableArray}`
   }
 }
 
-// Function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//function to render contributing section
+//if there is no contributing section return an empty string
+function renderContributing(lic){
+  let useContributing;
+  if (lic.contributing){
+    console.log('contributing included')
+    useContributing = `## Contributing
+    ${lic.contributing}`
+  } else {
+    useContributing = ''
+    console.log('no contributing included')
+  }
+  return `${useContributing}`
+}
+//function to render tests section
+//if there is not tests section return an empty string
+function renderTests(lic){
+  let useTests;
+  if (lic.tests){
+    console.log('tests included')
+    useTests = `## Testing Information
+    ${lic.tests}`
+  } else {
+    useTests = ''
+    console.log('no tests included')
+  }
+  return `${useTests}`
+}
+// Function to render questions section
+// If there is no tests section return and empty string
+function renderQuestions(lic){
+  let useQuestions;
+  if(lic.questionsGit || lic.questionsEmail){
+    console.log('questions section included')
+    useQuestions = `## Questions
+  github.com/${lic.questionsGit}/  
+  ${lic.questionsEmail}`
+  } else{
+    console.log('questions section not included')
+    useQuestions = ''
+  }
+  return useQuestions
+}
+
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
+  const includeTableOfContents = renderTableOfContents(data)
+  const includeDescription = renderDescription(data)
+  const includeContributing = renderContributing(data)
+  const includeTests = renderTests(data)
+  const includeQuestions = renderQuestions(data)
+  const includeLicenseInfo = renderLicenseInfo(data)
+  const includeBadge = renderLicenseBadge(data)
   return `# ${data.title}
-
 `;
 }
 
