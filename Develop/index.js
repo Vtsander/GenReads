@@ -18,7 +18,7 @@ const questions = [
         type: 'checkbox',
         name: 'sections',
         message: 'what sections would you like to include in the table of contents?',
-        choices: ['Description', 'Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
+        choices: ['Description', 'License', 'Contributing', 'Tests', 'Questions'],
         when (answers) {
             return answers.table
         }
