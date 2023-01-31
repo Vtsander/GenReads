@@ -25,5 +25,5 @@
  - Github - @Vtsander
  - Email - nguyenveroneca@yahoo.com
 ## Photos of Project
- - (./img/img1.png)
+ - <img src="./Develop/img/img1.png">
 
